@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.article_list),
+    path('', views.article_list),
+    path("<slug:slug>/", views.article_detail),
 ]
